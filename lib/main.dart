@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_batch_4/pages/day2/day2_grid_builder.dart';
+import 'package:flutter_batch_4/pages/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white
         )
       ),
-      home: Day2GridBuilderPage(),
+      home: MyHomePage(),
     );
   }
 }

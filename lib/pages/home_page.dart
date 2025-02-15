@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch_4/pages/day5/sample_1_page.dart';
+import 'package:flutter_batch_4/utils/extensions/context_extentions.dart';
 import 'package:flutter_batch_4/widgets/sample_widget.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -23,14 +23,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    print("mounted: $mounted");
-    print("initState");
     super.initState();
   }
 
   @override
   void dispose() {
-    print("dispose");
     super.dispose();
   }
 
@@ -38,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Home"),
         actions: [
           IconButton(
             onPressed: () {}, 
@@ -91,15 +88,31 @@ class _MyHomePageState extends State<MyHomePage> {
                 fit: BoxFit.cover,
               ),
             ),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FilledButton(
-                  onPressed: () {}, 
-                  child: Text("Filled Button")
+                  onPressed: () async {
+                    final result = await context.push<String>(Sample1Page(
+                      title: "Ini halaman pertama",
+                    ));
+                    if(result != null) {
+                      if(context.mounted) {
+                        context.dialog(AlertDialog(
+                          title: Text("Berhasil"),
+                          content: Text(result),
+                        ));
+                      }
+                    }
+                  }, 
+                  child: Text("Go to Sample 1 Page")
                 ),
                 OutlinedButton(
-                  onPressed: () {}, 
+                  onPressed: () => Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Sample1Page(
+                      title: "Replace Page"
+                    ))
+                  ), 
                   child: Text("Filled Button")
                 )
               ],
