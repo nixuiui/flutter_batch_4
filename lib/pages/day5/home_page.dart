@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_batch_4/pages/day5/contact_page.dart';
+import 'package:flutter_batch_4/utils/extensions/context_extentions.dart';
 import 'package:flutter_batch_4/utils/routes.dart';
 
 class HomePage extends StatefulWidget {
@@ -63,6 +65,12 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, AppRoutes.navbar);
               }, 
               child: Text("Navbar Page")
+            ),
+            FilledButton(
+              onPressed: () {
+                context.push(ContactPage());
+              }, 
+              child: Text("Transition Navigate")
             )
           ],
         ),
