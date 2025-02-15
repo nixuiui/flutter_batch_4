@@ -57,6 +57,12 @@ class _HomePageState extends State<HomePage> {
                 Navigator.pushNamed(context, AppRoutes.contact);
               }, 
               child: Text("Contact Page")
+            ),
+            FilledButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.navbar);
+              }, 
+              child: Text("Navbar Page")
             )
           ],
         ),

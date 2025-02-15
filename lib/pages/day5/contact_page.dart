@@ -14,6 +14,9 @@ class _ContactPageState extends State<ContactPage> {
       appBar: AppBar(
         title: Text("Contact"),
       ),
+      body: Center(
+        child: Text("Contact")
+      ),
     );
   }
 }

@@ -14,6 +14,9 @@ class _SettingPageState extends State<SettingPage> {
       appBar: AppBar(
         title: Text("Setting"),
       ),
+      body: Center(
+        child: Text("Contact")
+      ),
     );
   }
 }
