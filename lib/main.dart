@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => SettingCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => SettingCubit())
+      ],
       child: BlocBuilder<SettingCubit, SettingState>(
         builder: (context, state) {
           return MaterialApp(
