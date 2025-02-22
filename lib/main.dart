@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_batch_4/pages/day6/cubit/setting_cubit.dart';
 import 'package:flutter_batch_4/pages/day6/cubit/setting_state.dart';
+import 'package:flutter_batch_4/utils/singleton.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'utils/routes.dart';
 
 void main() {
+  singleton();
   runApp(const MyApp());
 }
 
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             routes: routes,
-            initialRoute: AppRoutes.counter,
+            initialRoute: AppRoutes.product,
           );
         }
       ),
